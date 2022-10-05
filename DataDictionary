@@ -1,0 +1,76 @@
+media = {
+    "blog":"Catatan Mantan IT",
+    "Youtube":"Lapak Ngoding"
+}
+print ("="*20,"Cara Akses 1","="*20)
+print (media,'\n')
+
+media = dict(
+    blog="Catatan Mantan IT",
+    Youtube="Lapak Ngoding"
+)
+print ("="*20,"Cara Akses 2","="*20)
+print (media,'\n')
+
+media = {
+    "blog":"Catatan Mantan IT",
+    "artikel":"Tipe Data Dictionary Python",
+    "tag":[
+        "Belajar Python Pemula","Dasar Python"
+    ],
+    "views":100,
+    "share":{
+        "facebook":10,
+        "twitter":0
+    }
+}
+
+#Mengakses
+print ("="*20,"Mengakses","="*20)
+print ("Blog :", media.get('blog'))
+print ("Artikel :", media['artikel'])
+print ("Facebook Share :", media.get('share').get('facebook'))
+print ("Twitter Share :", media['share']['twitter'])
+print('\n')
+
+#Perulangan
+print ("="*20,"Perulangan","="*20)
+for keyid in media:
+    print(keyid, ":", media[keyid])
+print('\n')
+
+#Mengubah atau Update
+print ("="*20,"Mengubah atau Mengupdate","="*20)
+print("Judul Artikel lama :", media.get('artikel'))
+media['artikel'] = 'Belajar Dictionary Python'
+print("Judul Artikel baru :", media.get('artikel'),'\n')
+
+#Menambah
+print ("="*20,"Menambah","="*20)
+print("Tanggal Posting :", media.get('tgl'))
+media['tgl'] = '5 Oktober 2022'
+print("Artikel {} di Posting pada tanggal : {}".format( 
+    media.get('artikel'),
+    media.get('tgl')
+    )
+)
+print('\n')
+
+#Hapus del
+print ("="*20,"Hapus del","="*20)
+del media['share']
+print (media, '\n')
+
+#Hapus pop()
+print ("="*20,"Hapus pop()","="*20)
+media.pop('share')
+print (media, '\n')
+
+#Hapus pop() dengan membuat variabel baru
+print ("="*20,"Hapus pop() dengan membuat variabel baru","="*20)
+
+hapus = media.pop('share')
+#ini hasilnya none karena data sudah di hapus dengan pop()
+print ("Share", media.get('share'))
+#dapat di akses kembali melalui variabel hapus
+print ("Share :",hapus)
